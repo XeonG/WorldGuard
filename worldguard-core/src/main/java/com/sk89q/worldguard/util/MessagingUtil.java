@@ -19,6 +19,8 @@
 
 package com.sk89q.worldguard.util;
 
+import com.sk89q.worldedit.util.formatting.text.TextComponent;
+import com.sk89q.worldedit.util.formatting.text.format.TextColor;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.commands.CommandUtils;
@@ -29,10 +31,12 @@ public final class MessagingUtil {
     }
 
     public static void sendStringToChat(LocalPlayer player, String message) {
-        String effective = CommandUtils.replaceColorMacros(message);
+        String effective = CommandUtils.replaceColorMacros("&8Kz&5|&9|;,. &8"+message);
         effective = WorldGuard.getInstance().getPlatform().getMatcher().replaceMacros(player, effective);
         for (String mess : effective.replaceAll("\\\\n", "\n").split("\\n")) {
-            player.printRaw(mess);
+            //player.printRaw(mess);
+            //player.print(TextComponent.of("Kz", TextColor.DARK_GRAY).append(TextComponent.of("|", TextColor.DARK_PURPLE).append(TextComponent.of("|;,.", TextColor.BLUE).append(TextComponent.of(" ** ", TextColor.AQUA).append(TextComponent.of(mess, TextColor.WHITE))))));
+            player.print(TextComponent.of(mess, TextColor.WHITE));
         }
     }
 
