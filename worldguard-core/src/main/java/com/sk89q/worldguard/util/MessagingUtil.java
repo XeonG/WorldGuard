@@ -31,7 +31,7 @@ public final class MessagingUtil {
     }
 
     public static void sendStringToChat(LocalPlayer player, String message) {
-        String effective = CommandUtils.replaceColorMacros("&8Kz&5|&9|;,. &8"+message);
+        String effective = CommandUtils.replaceColorMacros("&8Kz&5|&9|;,. &7"+message);
         effective = WorldGuard.getInstance().getPlatform().getMatcher().replaceMacros(player, effective);
         for (String mess : effective.replaceAll("\\\\n", "\n").split("\\n")) {
             //player.printRaw(mess);
