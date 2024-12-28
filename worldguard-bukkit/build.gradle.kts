@@ -19,9 +19,9 @@ dependencies {
     "compileOnly"(libs.commandbook) { isTransitive = false }
     // Technically this is api, but everyone should already have some form of the bukkit API
     // Avoid pulling in another one, especially one so outdated.
-    "localImplementation"(libs.spigot) {
-        exclude("junit", "junit")
-    }
+//    "localImplementation"(libs.spigot) {
+//        exclude("junit", "junit")
+//    }
 
     "compileOnly"(libs.jetbrains.annotations) {
         because("Resolving Spigot annotations")
