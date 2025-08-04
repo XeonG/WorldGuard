@@ -35,8 +35,8 @@ public final class MessagingUtil {
         effective = WorldGuard.getInstance().getPlatform().getMatcher().replaceMacros(player, effective);
         for (String mess : effective.replaceAll("\\\\n", "\n").split("\\n")) {
             //player.printRaw(mess);
-            //player.print(TextComponent.of("Kz", TextColor.DARK_GRAY).append(TextComponent.of("|", TextColor.DARK_PURPLE).append(TextComponent.of("|;,.", TextColor.BLUE).append(TextComponent.of(" ** ", TextColor.AQUA).append(TextComponent.of(mess, TextColor.WHITE))))));
-            player.print(TextComponent.of(mess, TextColor.WHITE));
+            player.print(TextComponent.of("Kz", TextColor.DARK_GRAY).append(TextComponent.of("|", TextColor.DARK_PURPLE).append(TextComponent.of("|;,.", TextColor.BLUE).append(TextComponent.of(" ** ", TextColor.AQUA).append(TextComponent.of(mess, TextColor.WHITE))))));
+            //player.print(TextComponent.of(mess, TextColor.WHITE));
         }
     }
 
